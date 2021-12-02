@@ -33,19 +33,46 @@ const ticTacToe = (() => {
 
     console.log (_playerO, _playerX);
 
-    cellElement.forEach(cell => {
-        cell.addEventListener("click", () => {
-            if (_playerXsTurn === true) {
-                console.log("hi")
-                _playerXsTurn = false;
-                _playerOsTurn = true;
-            }
+    console.log(_playerX.playerTurn)
 
-            if (cell.innerHTML === "") {
-                cell.innerHTML = "X";
+
+
+    cellElement.forEach(cell => {
+
+        function _playerXTurn () {
+            if (cell.innerHTML === "O") {
+                return;
+            } else {
+                cell.innerHTML = "X"
+                _swapTurns();
+                playerDisplay.innerHTML = "Player O's turn"; //backwards so they fit with hi and bye in the console
+            }
+        }
+
+        function _playerOTurn () {
+            if (cell.innerHTML === "X") {
+                return;
+            } else {
+                cell.innerHTML = "O"
+                _swapTurns();
+                playerDisplay.innerHTML = "Player X's turn"; //backwards so they fit with hi and bye in the console
+            }
+        }
+
+        cell.addEventListener("click", () => {
+            if (_playerX.playerTurn === true) {
+                console.log("hi");
+                _playerXTurn();
+                return
+            } 
+            if (_playerO.playerTurn === true) {
+                console.log("bye");
+                _playerOTurn();
             }
         })
     })
+
+
 
     function returnCellId(e) {
         let associatedCell = e.target.dataset.cellId;
@@ -62,9 +89,7 @@ const ticTacToe = (() => {
     });
 
 
-    function _placeMark () {
 
-    }
 
     function _checkWin () {
 
@@ -76,11 +101,15 @@ const ticTacToe = (() => {
 
 
 
-    cellElement.forEach(cell => {
+//    cellElement.forEach(cell => {
+//        cell.addEventListener("click", () => {
+//            if (cell.innerHTML === "") {
+//                cell.innerHTML = "X"
+//            }
+//        })
+//    })
 
-    })
-
-    console.log(cellElement);
+//    console.log(cellElement);
 
 
 

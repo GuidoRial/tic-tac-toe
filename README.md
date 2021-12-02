@@ -1,7 +1,7 @@
 # tic-tac-toe
 
 ## Live Preview
-
+    https://guidorial.github.io/tic-tac-toe/
 
 ## General Info
     A simple tic-tac-toe game that I made as part of The Odin Project's curriculum to practise factory functions, the module pattern and scope
