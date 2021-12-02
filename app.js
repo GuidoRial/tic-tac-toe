@@ -3,6 +3,15 @@ const ticTacToe = (() => {
     const cellElement = document.querySelectorAll("[data-cell]");
     const restartBtn = document.getElementById("restartBtn");
     
+
+
+
+
+
+
+    cellZero.innerHTML = ""
+    console.log(cellZero.innerHTML);
+
     const playerFactory = (name, playerTurn) => {
         const switchTurns = function () {
             if (this.playerTurn === true) {
@@ -39,6 +48,29 @@ const ticTacToe = (() => {
 
     cellElement.forEach(cell => {
 
+        function _restartGame() {
+
+        }
+
+
+
+
+        function _checkGame () {
+            const cellZero = document.getElementById("cellZero");
+            const cellOne = document.getElementById("cellOne");
+            const cellTwo = document.getElementById("cellTwo");
+            const cellThree = document.getElementById("cellThree");
+            const cellFour = document.getElementById("cellFour");
+            const cellFive = document.getElementById("cellFive");
+            const cellSix = document.getElementById("cellSix");
+            const cellSeven = document.getElementById("cellSeven");
+            const cellEight = document.getElementById("cellEight");
+
+            if (cellZero.innerHTML === "X" && cellOne.innerHTML === "X" && cellTwo.innerHTML === "X") {
+                playerDisplay.innerHTML = "player X WINS!!!"
+            }
+        }
+
         function _playerXTurn () {
             if (cell.innerHTML === "O") {
                 return;
@@ -60,6 +92,7 @@ const ticTacToe = (() => {
         }
 
         cell.addEventListener("click", () => {
+
             if (_playerX.playerTurn === true) {
                 console.log("hi");
                 _playerXTurn();
@@ -69,52 +102,20 @@ const ticTacToe = (() => {
                 console.log("bye");
                 _playerOTurn();
             }
+            _checkGame();
         })
+
+
     })
 
 
 
-    function returnCellId(e) {
-        let associatedCell = e.target.dataset.cellId;
-        console.log(`the cell ID is ${associatedCell}`);
-        associatedCell.innerHTML = "X";
-        //Place mark
-        //Check for win. Puedo checkear con los dataCellId, si 0, 1 y 2.innerHTML = X gana X 
-        //Check for Draw
-        //Check for Switch turns
-    }
+
 
     restartBtn.addEventListener("click", () => {
-
+        let associatedCell = e.target.dataset.cellId;
+        console.log(`the cell ID is ${associatedCell}`);
     });
-
-
-
-
-    function _checkWin () {
-
-    }
-
-    function _checkDraw () {
-
-    }
-
-
-
-//    cellElement.forEach(cell => {
-//        cell.addEventListener("click", () => {
-//            if (cell.innerHTML === "") {
-//                cell.innerHTML = "X"
-//            }
-//        })
-//    })
-
-//    console.log(cellElement);
-
-
-
-
-
 
 
 })();
