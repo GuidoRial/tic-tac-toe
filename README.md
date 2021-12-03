@@ -13,4 +13,5 @@
 
 ## What I learned
     *  JavaScript
-      -  
+      -  How modules work and how to create them
+      -  How to create objects and assign them methods using factory functions
