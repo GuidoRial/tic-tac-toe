@@ -12,6 +12,8 @@
     *  JavaScript
 
 ## What I learned
+    *  CSS
+      -  How to use variables
     *  JavaScript
       -  How modules work and how to create them
       -  How to create objects and assign them methods using factory functions
